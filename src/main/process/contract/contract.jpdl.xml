@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="contract" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="284,60,48,48" name="start">
+      <transition g="-53,-17" name="to draft" to="draft"/>
+   </start>
+   <task assignee="#{owner}" form="jbpm/contract/draft" g="262,145,92,52" name="draft">
+      <transition g="-59,-17" name="to submit" to="submit"/>
+      <transition g="-41,-17" name="to end" to="end"/>
+   </task>
+   <task assignee="2" form="jbpm/contract/submit" g="264,239,92,52" name="submit">
+      <transition g="-53,-17" name="to check" to="check"/>
+      <transition g="-41,-17" name="to end" to="end"/>
+   </task>
+   <task assignee="3" form="jbpm/contract/check" g="268,334,92,52" name="check">
+      <transition g="263,431:-59,-17" name="to modify" to="modify"/>
+      <transition g="-41,-17" name="to end" to="end"/>
+   </task>
+   <task assignee="#{owner}" form="jbpm/contract/modify" g="116,412,92,52" name="modify">
+      <transition g="188,352:-53,-17" name="to check" to="check"/>
+   </task>
+   <end g="482,256,48,48" name="end"/>
+</process>

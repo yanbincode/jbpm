@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="factory" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="413,8,48,48" name="start">
+      <transition g="-89,-17" name="to order apply" to="order apply"/>
+   </start>
+   <task g="391,88,92,52" name="order apply">
+      <transition g="-89,-17" name="to order check" to="order check"/>
+   </task>
+   <task g="391,172,92,52" name="order check">
+      <transition g="-83,-17" name="to order auditing" to="exclusive"/>
+   </task>
+   <decision g="413,256,48,48" name="exclusive">
+      <transition g="219,282:-65,-17" name="cancel" to="cancel"/>
+      <transition g="638,280:-53,-17" name="approve" to="fork"/>
+   </decision>
+   <end-cancel g="197,361,48,48" name="cancel"/>
+   <fork g="617,349,48,48" name="fork">
+      <transition g="529,373:-71,-17" name="to shipping" to="shipping"/>
+      <transition g="759,373:-77,-17" name="to financing" to="financing"/>
+   </fork>
+   <task g="485,435,92,52" name="shipping">
+      <transition g="-77,-17" name="to receiving" to="receiving"/>
+   </task>
+   <task g="484,533,92,52" name="receiving">
+      <transition g="529,651:-53,-17" name="to join" to="join"/>
+   </task>
+   <task g="714,476,92,52" name="financing">
+      <transition g="761,652:-53,-17" name="to join" to="join"/>
+   </task>
+   <join g="631,629,48,48" name="join">
+      <transition g="-47,-17" name="to end1" to="end"/>
+   </join>
+   <end g="632,750,48,48" name="end"/>
+</process>

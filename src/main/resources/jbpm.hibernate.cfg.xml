@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 需要修改指定我们的数据库配置 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:root</property>
+		<property name="hibernate.connection.username">system</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.sql_show">true</property>
+
+		<!-- 匹配到jbpm的映射文件 -->
+		<mapping resource="jbpm.repository.hbm.xml" />
+		<mapping resource="jbpm.execution.hbm.xml" />
+		<mapping resource="jbpm.history.hbm.xml" />
+		<mapping resource="jbpm.task.hbm.xml" />
+		<mapping resource="jbpm.identity.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
