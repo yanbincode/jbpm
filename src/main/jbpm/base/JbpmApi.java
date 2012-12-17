@@ -18,8 +18,12 @@ import org.jbpm.api.ProcessInstanceQuery;
 import org.jbpm.api.RepositoryService;
 import org.jbpm.api.TaskQuery;
 import org.jbpm.api.TaskService;
+import org.jbpm.api.history.HistoryActivityInstance;
+import org.jbpm.api.history.HistoryActivityInstanceQuery;
 import org.jbpm.api.history.HistoryDetail;
 import org.jbpm.api.history.HistoryDetailQuery;
+import org.jbpm.api.history.HistoryProcessInstance;
+import org.jbpm.api.history.HistoryProcessInstanceQuery;
 import org.jbpm.api.history.HistoryTask;
 import org.jbpm.api.history.HistoryTaskQuery;
 import org.jbpm.api.job.Job;
@@ -77,9 +81,10 @@ public class JbpmApi {
 		TaskQuery taskQuery = taskService.createTaskQuery();
 		// 5、任务历史查询对象
 		HistoryTaskQuery historyTaskQuery = historyService.createHistoryTaskQuery();
-		// 6、任务历史备注，分配者等
 		HistoryDetailQuery historyDetailQuery = historyService.createHistoryDetailQuery();
-		// 7、管理job查询对象
+		HistoryActivityInstanceQuery historyActivityInstanceQuery = historyService.createHistoryActivityInstanceQuery();
+		HistoryProcessInstanceQuery historyProcessInstanceQuery = historyService.createHistoryProcessInstanceQuery();
+		// 6、管理job查询对象：异步工作
 		JobQuery jobQuery = managementService.createJobQuery();
 
 		/**
@@ -100,7 +105,9 @@ public class JbpmApi {
 		// 6、 历史
 		HistoryTask historyTask = historyTaskQuery.uniqueResult();
 		HistoryDetail historyDetail = historyDetailQuery.uniqueResult();
-		// 7、管理
+		HistoryActivityInstance historyActivityInstance = historyActivityInstanceQuery.uniqueResult();
+		HistoryProcessInstance historyProcessInstance = historyProcessInstanceQuery.uniqueResult();
+		// 7、管理：异步工作
 		Job job = jobQuery.uniqueResult();
 
 	}

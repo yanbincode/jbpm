@@ -214,8 +214,4 @@ public class JbpmServiceImpl {
 		taskService.completeTask(taskId, toName);
 	}
 
-	public void repository() {
-
-	}
-
 }
