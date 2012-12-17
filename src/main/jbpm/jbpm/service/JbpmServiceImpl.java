@@ -9,10 +9,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.zip.ZipInputStream;
 
-import org.jbpm.api.ExecutionService;
-import org.jbpm.api.HistoryService;
-import org.jbpm.api.IdentityService;
-import org.jbpm.api.ManagementService;
 import org.jbpm.api.NewDeployment;
 import org.jbpm.api.ProcessDefinition;
 import org.jbpm.api.ProcessDefinitionQuery;
@@ -220,30 +216,6 @@ public class JbpmServiceImpl {
 
 	public void repository() {
 
-	}
-
-	public void instance() {
-
-		// 引擎：
-		ProcessEngine processEngine2;
-		// 资源库服务：对流程定义的部署，查询，删除
-		RepositoryService repositoryService = processEngine.getRepositoryService();
-		// 执行服务：启动流程，执行，设置流程
-		ExecutionService executionService = processEngine.getExecutionService();
-		// 任务服务：对任务的创建，提交，查询，保存，删除
-		TaskService taskService = processEngine.getTaskService();
-		// 历史服务：完成的流程的归档，历史的查询
-		HistoryService historyService = processEngine.getHistoryService();
-		// 身份认证服务：流程用户，用户组以及组成员关系的服务
-		IdentityService identityService = processEngine.getIdentityService();
-		// 管理服务
-		ManagementService managementService = processEngine.getManagementService();
-
-		// 发起一个流程实例
-		// 根据key启动
-		ProcessInstance processInstance = executionService.startProcessInstanceByKey("");
-		// 根据id启动
-		processInstance = executionService.startProcessInstanceById("");
 	}
 
 }
