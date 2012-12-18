@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 流程定义的顶级元素 : key 和 version 组合成为主键 -->
-<process xmlns="http://jbpm.org/4.4/jpdl" name="jbpm" key="jbpm" version="1.0">
+<process xmlns="http://jbpm.org/4.4/jpdl" name="jbpm" key="jbpm" version="1.0" description="描述">
+	<!-- 开始活动 -->
+	<start>
+	</start>
+	<!-- 状态活动 -->
+	<state></state>
+	<!-- 人工活动 -->
+	<task></task>
+	<!-- 判断活动 -->
+	<decision></decision>
+	<!-- fork-join 分支/聚合活动 -->
+	<fork></fork>
+	<join></join>
+	<!-- 子流程 -->
+	<sub-process></sub-process>
+	<!-- 自定义活动 -->
+	<custom></custom>
+	<!-- 结束活动 -->
+	<end></end>
 </process>
