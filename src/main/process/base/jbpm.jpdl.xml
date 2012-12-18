@@ -3,10 +3,16 @@
 <!-- 流程定义的顶级元素 : key 和 version 组合成为主键 -->
 <process xmlns="http://jbpm.org/4.4/jpdl" name="jbpm" key="jbpm" version="1.0" description="描述">
 	<!-- 开始活动 -->
-	<start>
+	<start name="start">
+		<!-- 工作流转向 -->
+		<transition name="to" to="to" />
 	</start>
-	<!-- 状态活动 -->
-	<state></state>
+	
+	<!-- 状态活动：流程进入等待状态 -->
+	<state name="state">
+		<transition name="to" to="to" />
+	</state>
+	
 	<!-- 人工活动 -->
 	<task></task>
 	<!-- 判断活动 -->
