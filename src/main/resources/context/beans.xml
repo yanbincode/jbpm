@@ -50,6 +50,6 @@
 	<!-- 配置工作流引擎 -->
 	<bean id="springHelper" class="org.jbpm.pvm.internal.processengine.SpringHelper" />
 	<bean id="processEngine" factory-bean="springHelper" factory-method="createProcessEngine" />
-	
+
 
 </beans>
