@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 流程定义的顶级元素 : key 和 version 组合成为主键 -->
+<process xmlns="http://jbpm.org/4.4/jpdl" name="jbpm" key="jbpm" version="1.0">
+</process>
