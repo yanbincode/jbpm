@@ -17,8 +17,8 @@ import org.springframework.web.context.WebApplicationContext;
 public class TagHelper {
 
 	public static JbpmServiceImpl getJbpmService(PageContext pageContext) {
-		WebApplicationContext context = (WebApplicationContext) pageContext
-				.getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
+		WebApplicationContext context = (WebApplicationContext) pageContext.getServletContext().getAttribute(
+				WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
 		Collection<JbpmServiceImpl> collection = context.getBeansOfType(JbpmServiceImpl.class).values();
 		if (collection.size() <= 0) {
 			throw new IllegalArgumentException("there is no type of the bean");
