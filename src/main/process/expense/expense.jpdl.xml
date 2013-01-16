@@ -17,4 +17,4 @@
    <task assignee="1" g="16,348,92,52" name="领取金额">
       <transition g="-47,-17" name="to end" to="end"/>
    </task> 
-</process>
+</process> 
