@@ -1,4 +1,4 @@
-package jbpm.controller;
+package controller;
 
 import model.Expense;
 
