@@ -20,6 +20,7 @@ public class Expense implements Serializable {
 	private Long expId;
 	private String reason;
 	private BigDecimal money;
+	private String processId;
 
 	public Long getExpId() {
 		return expId;
@@ -43,6 +44,14 @@ public class Expense implements Serializable {
 
 	public void setMoney(BigDecimal money) {
 		this.money = money;
+	}
+
+	public String getProcessId() {
+		return processId;
+	}
+
+	public void setProcessId(String processId) {
+		this.processId = processId;
 	}
 
 }

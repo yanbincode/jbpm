@@ -37,5 +37,16 @@ public class JbpmAdvice {
 		System.out.print(jp.getSignature().getName() + "方法删除了");
 		System.out.print("只留下：" + result + "\n\n");
 	}
+	
+	@AfterReturning(value = "execution(* controller.*.startProcess(..))", returning = "result")
+	public void startProcess(JoinPoint jp, String result)  {
+		System.out.println("==========进入after advice=========== \n");
+		System.out.println("切入点方法执行完了 \n");
+
+		System.out.print(jp.getArgs()[0] + "在");
+		System.out.print(jp.getTarget().getClass() + "对象上被");
+		System.out.print(jp.getSignature().getName() + "方法删除了");
+		System.out.print("只留下：" + result + "\n\n");
+	}
 
 }
