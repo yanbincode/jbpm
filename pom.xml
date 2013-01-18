@@ -50,7 +50,7 @@
 		<dependency>
 			<groupId>extra-jar</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.6.2</version>
+			<version>1.7.1</version>
 		</dependency>
 		<dependency>
 			<groupId>extra-jar.sql-driver</groupId>
@@ -294,7 +294,6 @@
 			<artifactId>slf4j</artifactId>
 			<version>1.6.1</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
